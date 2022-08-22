@@ -1,4 +1,7 @@
-const getGoals = (req, res) => {
+const asyncHandler = require('express-async-handler')
+
+
+const getGoals = asyncHandler (async (req, res) => {
     res.status(200).json({
             goals :[
                 {
@@ -10,9 +13,14 @@ const getGoals = (req, res) => {
                 }
             ]
     });
-}
+})
 
-const addGoal = (req, res) =>{
+const addGoal = asyncHandler(async (req, res) =>{
+    if(!req.body.text){
+        res.status(400);
+        throw new Error('Please add a text field')
+    }
+
     res.status(200).json({
         goals: [
             {   // an array of objects  
@@ -23,9 +31,9 @@ const addGoal = (req, res) =>{
             }
         ]
     });
-}
+})
 
-const updateGoal = (req, res) => {
+const updateGoal = asyncHandler(async (req, res) => {
     res.status(200).json({
         goals: [
             {   // an array of objects  
@@ -36,9 +44,9 @@ const updateGoal = (req, res) => {
             }
         ] 
     });
-}
+})
 
-const deleteGoal = (req, res) => {
+const deleteGoal = asyncHandler(async (req, res) => {
     res.status(200).json({
         goals: [
             {   // an array of objects  
@@ -50,7 +58,7 @@ const deleteGoal = (req, res) => {
         ] 
     });
 }
-
+)
 
 module.exports = {
     getGoals,
