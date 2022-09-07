@@ -24,6 +24,9 @@ app.use(express.urlencoded({ extended: false }))
 // This app Directs Root path "/"===="/api/goals" to this file folder location
 app.use('/api/goals', require('./routes/goalRoutes'))
 
+// This app Directs Root path "/"===="/api/User" to this file folder location
+app.use('/api/user', require('./routes/userRoutes'))
+
 
 // Error Handler
 app.use(errorHandler)
