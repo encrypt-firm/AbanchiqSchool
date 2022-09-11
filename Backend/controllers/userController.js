@@ -8,6 +8,14 @@ const User = require('./../models/userModel')
 // @ROUTE   /api/user
 // @Access   Public
 const registerUser =asyncHandler( async(req, res) =>{
+    const {name, email, password} = req.body
+
+    if (!name || !email || !password){
+        res.status(400)
+        throw new Error('Please add all fiels')
+    } else {
+        
+    }
 res.status(200).json({
     message : 'User Registered'
 })
