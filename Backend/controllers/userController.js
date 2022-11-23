@@ -41,7 +41,8 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(201).json({
             _id: user.id,
             name: user.name,
-            email: user.email
+            email: user.email,
+            token: generateToken(user._id)
         })
     } else {
         res.status(400)
@@ -60,10 +61,11 @@ const loginUser = asyncHandler(async (req, res) => {
     const user = await User.findOne({ email })
     // check for user email
     if (user && (await bcrypt.compare(password, user.password))) {
-        res.json({
+        res.status(201).json({
             _id: user.id,
             name: user.name,
-            emal: user.email
+            emal: user.email,
+            token: generateToken(user._id)
         })
     } else {
         res.status(400)
@@ -73,12 +75,20 @@ const loginUser = asyncHandler(async (req, res) => {
 })
 //@DESC  get USER profile/data ****GET METHOD*****
 // @ROUTE   /api/user/profile
-// @Access   Public
+// @Access will be  Private
 const userProfile = asyncHandler(async (req, res) => {
     res.status(200).json({
         message: 'logged in user'
     })
 })
+
+// @GENARTE TOKEN JWS
+const generateToken =(id) =>{
+    return jwt.sign({id}, process.env.JWT_URI,{
+        expiresIn: '30d'
+    })
+}
+
 
 const userData = asyncHandler(async (req, res) => {
 
