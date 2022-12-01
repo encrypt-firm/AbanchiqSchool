@@ -6,10 +6,12 @@ const {
     userProfile
 } = require('./../controllers/userController')
 
+// protecting my routes
+const {protect} = require('../middleware/authMiddleware')
 
 router.post('/', registerUser);
 router.post('/login', loginUser);
-router.get('/profile', userProfile);
+router.get('/profile', protect ,userProfile);
 
 
 
