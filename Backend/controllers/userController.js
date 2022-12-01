@@ -77,9 +77,14 @@ const loginUser = asyncHandler(async (req, res) => {
 // @ROUTE   /api/user/profile
 // @Access will be  Private
 const userProfile = asyncHandler(async (req, res) => {
+    const { _id, name, email} = await User.findById(req.user.id)
+
     res.status(200).json({
-        message: 'logged in user'
+        id: _id,
+        name,
+        email
     })
+
 })
 
 // @GENARTE TOKEN JWS
