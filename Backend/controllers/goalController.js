@@ -13,7 +13,7 @@ const getGoals = asyncHandler(async (req, res) => {
 })
 
 
-// Add Goals
+// Add/Create Goals
 const addGoal = asyncHandler(async (req, res) => {
     if (!req.body.text) {
         res.status(400)
