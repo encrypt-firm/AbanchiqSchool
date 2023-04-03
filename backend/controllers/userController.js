@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
-const User = require('./../models/userModel')
+const User = require('../models/userModel')
 
 
 //@DESC  REGISTER NEW USER ****POST METHOD*****
@@ -78,7 +78,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @ROUTE   /api/user/profile
 // @Access will be  Private
 const userProfile = asyncHandler(async (req, res) => {
-    const { _id, name, email} = await User.findById(req.user.id)
+    const { _id, name, email } = await User.findById(req.user.id)
 
     res.status(200).json({
         id: _id,
@@ -89,8 +89,8 @@ const userProfile = asyncHandler(async (req, res) => {
 })
 
 // @GENARTE TOKEN JWS
-const generateToken =(id) =>{
-    return jwt.sign({id}, process.env.JWT_URI,{
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_URI, {
         expiresIn: '30d'
     })
 }
