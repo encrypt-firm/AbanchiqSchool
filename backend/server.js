@@ -1,3 +1,4 @@
+clear
 
 //  Created variables for the environments needed to run this the node app
 
