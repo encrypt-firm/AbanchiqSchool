@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "dev": " concurrently \"npm run server\" \"npm run client\" "
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "mongoose": "^6.5.2"
   },
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "nodemon": "^2.0.19"
   }
 }
