@@ -1,12 +1,10 @@
-clear
-
 //  Created variables for the environments needed to run this the node app
 
 const express = require('express');
 const colors = require('colors')
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 5000;
-const{errorHandler} = require('./middleware/errorMiddleware')
+const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDataBase = require('./config/database')
 
 
