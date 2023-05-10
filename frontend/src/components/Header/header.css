@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+.H-Navigation {
+  color: var(--body-font);
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  z-index: 100;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+  background: #e9bf8b;
+}
+.menu {
+  flex: 1;
+  justify-items: center;
+  /* background: black; */
+  padding: 0 1rem;
+}
+.Logo {
+  /* background: black; */
+  justify-items: center;
+}
+.Logo img {
+  width: 100px;
+  height: 60px;
+}
+
+.search-bar .box {
+  display: flex;
+  height: 40px;
+  cursor: pointer;
+  padding: 5px 20px;
+  background: var(--body-font);
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+.search-bar .box:hover input {
+  width: 400px;
+}
+.search-bar .box input {
+  width: 0;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+}
+
+.search-bar .box button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.headerNav {
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.headerNav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.headerNav ul li {
+  padding: 0 1rem;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.linkTo {
+  font-size: 15px;
+  font-weight: bolder;
+  color: black;
+  text-decoration: none;
+  background-color: var(--bg);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.4rem;
+  display: flex;
+  letter-spacing: 3px;
+}
+
+.cart {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 8;
+}
+.cart span {
+  width: 30px;
+  height: 30px;
+  top: -1.2rem;
+  right: 0;
+  background-color: #efdcb7;
+  position: absolute;
+  border-radius: 50%;
+}
+.cartButton {
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+}
+.cart-icon {
+  z-index: 10;
+  background-color: #e9bf8b;
+  border-radius: 50%;
+}
+
+.linkTo:hover {
+  background-color: #f5deb3;
+  color: black;
+}

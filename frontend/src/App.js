@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Register from './pages/register/Register'
 import Login from './pages/login/Login'
 import Dashboard from './pages/dashboard/Dashboard'
+import Header from './components/Header/Header'
 // import Logout from './components/logout/Logout'
 
 
@@ -13,10 +14,11 @@ function App() {
     <>
       <Router>
         <div className="App">
+          <Header />
           <Routes>
-            <Route path='/' element={<Dashboard/>} />
-            <Route path='/register' element={<Register/>} />
-            <Route path='/login' element={<Login/>} />
+            <Route path='/' element={<Dashboard />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </div>
       </Router>

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff&display=swap");
+.cover-message {
+  border-radius: 61% 39% 52% 48% / 42% 30% 70% 58%;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  background-color: #454545;
+}
+.login-message {
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+
+  /* background-color: #454545; */
+}
+.message-wrapper {
+  height: 100%;
+  animation: move 10s ease-in-out infinite alternate;
+}
+.message {
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(236, 95, 95);
+  letter-spacing: 0.2rem;
+  display: flex;
+  align-items: center;
+  font-family: "DynaPuff", cursive;
+}
+
+@keyframes move {
+  25% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  75% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+form div,
+form p {
+  color: #babecc;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+form {
+  padding: 16px;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.segment {
+  padding: 32px 0;
+  text-align: center;
+}
+.segment h1 {
+  font-family: "Courier New", Courier, monospace;
+  color: #1e1e1e;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+form button,
+form input {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #ffffff;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+form label {
+  display: flex;
+  margin-bottom: 24px;
+  width: 100%;
+  align-items: center;
+}
+
+form input {
+  margin-right: 8px;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+form input:focus {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+
+form button {
+  color: #61677c;
+  font-weight: bold;
+  box-shadow: -2px -2px 1px #fff, 3px 3px 10px #babecc;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+}
+form button:hover {
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+form button:active {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+form button .icon {
+  margin-right: 8px;
+}
+form button.unit {
+  border-radius: 8px;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+  font-size: 19.2px;
+}
+form button.unit .icon {
+  margin-right: 0;
+}
+form button.red {
+  display: block;
+  width: 100%;
+  color: #454545;
+}
